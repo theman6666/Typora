@@ -1,0 +1,7 @@
+*.lnk 
+*.xmind 
+*.pdf 
+*.docx 
+__pycache__/ 
+*.pyc 
+.DS_Store 
