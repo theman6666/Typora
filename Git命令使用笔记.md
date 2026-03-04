@@ -77,9 +77,11 @@ git checkout develop
 git reset --hard HEAD~1
 ```
 
-## 2. 一些常见命令的解析：
+ 
 
 ---
+
+## 2. 一些常见命令的解析：
 
 ### 2.1 `git reset --hard HEAD~1 `
 
@@ -255,6 +257,24 @@ git reset --hard <commit-id>
 
 ---
 
+### 2.2 echo "your_folder_name/" >> .git/info/exclude
+
+这个命令是用来如果你有一些文件是不用上传上去的，但是你又不想写在.gitignore里面时需要用上的
+
+#### 只需要使用 `echo` 追加一行规则
+
+```bash
+echo "your_folder_name/" >> .git/info/exclude
+```
+
+- `>>` 表示追加内容到文件末尾（如果文件不存在，则会创建）。
+
+- 规则语法与 `.gitignore` 完全一致，例如忽略 `temp` 文件夹：`temp/`
+
+**注意**：如果 `.git/info/exclude` 文件不存在，这条命令会自动创建它（前提是 `.git/info` 目录已存在）。通常 Git 仓库初始化后该目录是存在的。
+
+---
+
 ## 3.git本地名字和邮箱的更改
 
 #### 一、修改本地 Git 用户名（影响提交记录里的作者名）
@@ -284,8 +304,6 @@ git config user.name "DeepDreamChaser"
 ```
 git config --global user.name "你想要的名字"
 ```
-
- 
 
 ### 二、修改本地 Git 邮箱
 
